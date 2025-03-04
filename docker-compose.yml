@@ -1,0 +1,16 @@
+services:
+  react-frontend:
+    build:
+      context: .
+      args:
+        - REACT_APP_API_URL=http://localhost:5000
+    ports:
+      - "80:80"
+    networks:
+      - app-network
+    environment:
+      - NODE_ENV=production
+
+networks:
+  app-network:
+    driver: bridge
